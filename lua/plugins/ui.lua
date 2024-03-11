@@ -83,7 +83,7 @@ return {
 		dependencies = {
 			"nvim-lua/plenary.nvim",
 			"nvim-telescope/telescope-file-browser.nvim",
-			"andrew-george/telescope-themes",
+			-- "andrew-george/telescope-themes",
 		},
 		config = function()
 			require("features.telescope")
