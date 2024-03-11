@@ -1,26 +1,4 @@
 return {
-	-- neo-tree
-	{
-		"nvim-neo-tree/neo-tree.nvim",
-		branch = "v3.x",
-		dependencies = {
-			"nvim-lua/plenary.nvim",
-			"nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
-			"MunifTanjim/nui.nvim",
-		},
-		config = function()
-			require("neo-tree").setup({
-				popup_border_style = "rounded", --rounded
-				window = {
-					position = "right",
-					width = 30,
-				},
-				default_component_configs = {
-					indent = {},
-				},
-			})
-		end,
-	},
 	--web-tools
 	--{
 	--	"ray-x/web-tools.nvim",
@@ -76,19 +54,6 @@ return {
 			})
 		end,
 	},
-	-- fzf
-	{
-		"nvim-telescope/telescope.nvim",
-		tag = "0.1.5", -- or , branch = '0.1.x',
-		dependencies = {
-			"nvim-lua/plenary.nvim",
-			"nvim-telescope/telescope-file-browser.nvim",
-			"andrew-george/telescope-themes",
-		},
-		config = function()
-			require("features.telescope")
-		end,
-	},
 	-- gitsigns
 	{
 		"lewis6991/gitsigns.nvim",
@@ -106,16 +71,83 @@ return {
 			})
 		end,
 	},
-	-- {
-	-- 	"ibhagwan/fzf-lua",
-	-- 	-- optional for icon support
-	-- 	dependencies = {
-	-- 		"nvim-tree/nvim-web-devicons",
-	-- 		{ "junegunn/fzf", build = "./install --bin" },
-	-- 	},
-	-- 	config = function()
-	-- 		-- calling `setup` is optional for customization
-	-- 		require("fzf-lua").setup({ "fzf-vim" }) -- max-perf = desactiva icons
-	-- 	end,
-	-- }
+	-- colorizer
+	{
+		"NvChad/nvim-colorizer.lua",
+		event = "VeryLazy",
+		config = function()
+			require("colorizer").setup({
+				user_default_options = {
+					rgb_fn = true, -- CSS rgb() and rgba() functions
+					hsl_fn = true, -- CSS hsl() and hsla() functions
+					tailwind = true,
+					sass = { enable = false, parsers = { "css" } }, -- Enable sass colors
+				},
+			})
+		end,
+	},
+
+	{
+		"RRethy/vim-illuminate",
+		event = { "BufReadPost", "BufNewFile" },
+		opts = {
+			delay = 200,
+			large_file_cutoff = 2000,
+			large_file_overrides = {
+				providers = { "lsp" },
+			},
+		},
+		config = function(_, opts)
+			require("illuminate").configure(opts)
+
+			local function map(key, dir, buffer)
+				vim.keymap.set("v", key, function()
+					require("illuminate")["goto_" .. dir .. "_reference"](false)
+				end, { desc = dir:sub(1, 1):upper() .. dir:sub(2) .. " Reference", buffer = buffer })
+			end
+
+			map("]]", "next")
+			map("[[", "prev")
+
+			vim.api.nvim_create_autocmd("FileType", {
+				callback = function()
+					local buffer = vim.api.nvim_get_current_buf()
+					map("]]", "next", buffer)
+					map("[[", "prev", buffer)
+				end,
+			})
+		end,
+		keys = {
+			{ "]]", desc = "Next Reference" },
+			{ "[[", desc = "Prev Reference" },
+		},
+	},
+  -- rainbow-delimiters
+	{
+		"HiPhish/rainbow-delimiters.nvim",
+		event = "VeryLazy",
+		config = function()
+			local rainbow_delimiters = require("rainbow-delimiters")
+			require("rainbow-delimiters.setup").setup({
+				strategy = {
+					[""] = rainbow_delimiters.strategy["global"],
+					commonlisp = rainbow_delimiters.strategy["local"],
+				},
+				query = {
+					[""] = "rainbow-delimiters",
+					latex = "rainbow-blocks",
+				},
+				highlight = {
+					-- "RainbowDelimiterRed",
+					"RainbowDelimiterYellow",
+					"RainbowDelimiterBlue",
+					"RainbowDelimiterOrange",
+					"RainbowDelimiterGreen",
+					"RainbowDelimiterViolet",
+					"RainbowDelimiterCyan",
+				},
+				blacklist = { "c", "cpp" },
+			})
+		end,
+	}
 }

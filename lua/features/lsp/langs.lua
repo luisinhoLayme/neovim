@@ -71,6 +71,13 @@ return {
     }
   end,
   ["marksman"] = default,
+  ["pyright"] = function ()
+    return {
+      capabilities = capabilities,
+      on_attach = lsp_attach,
+      flags = lsp_flags,
+    }
+  end,
   -- ["volar"] = default,
   -- ["svelte"] = default,
   ["tailwindcss"] = function()

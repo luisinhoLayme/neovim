@@ -8,7 +8,14 @@ require("telescope").setup({
 		},
 	},
 })
-
+-- -                        '─',
+-- -                        '│',
+-- -                        '─',
+-- -                        '│',
+-- -                        '┌',
+-- -                        '┐',
+-- -                        ' ┘',
+-- -                        '└',
 require("features.telescope.mapings")
 
 require("telescope").load_extension("notify")

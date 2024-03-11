@@ -25,6 +25,18 @@ return {
 		end,
 	},
 	{
+		"sainnhe/everforest",
+		lazy = false,
+		enabled = values.theme.name == 'everforest',
+		priority = 1000,
+		init = function()
+			require("features.config-schemes.everforest")
+		end,
+		config = function()
+			vim.cmd.colorscheme("everforest")
+		end,
+	},
+	{
 		"EdenEast/nightfox.nvim",
 		enabled = values.theme.name == 'fox',
 		lazy = false,

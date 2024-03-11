@@ -1,4 +1,26 @@
 return {
+	-- neo-tree
+	{
+		"nvim-neo-tree/neo-tree.nvim",
+		branch = "v3.x",
+		dependencies = {
+			"nvim-lua/plenary.nvim",
+			"nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
+			"MunifTanjim/nui.nvim",
+		},
+		config = function()
+			require("neo-tree").setup({
+				popup_border_style = "rounded", --rounded
+				window = {
+					position = "right",
+					width = 30,
+				},
+				default_component_configs = {
+					indent = {},
+				},
+			})
+		end,
+	},
 	-- noice
 	{
 		"folke/noice.nvim",
@@ -53,4 +75,30 @@ return {
 			vim.notify = notify.notify
 		end,
 	},
+
+	-- fzf
+	{
+		"nvim-telescope/telescope.nvim",
+		tag = "0.1.5", -- or , branch = '0.1.x',
+		dependencies = {
+			"nvim-lua/plenary.nvim",
+			"nvim-telescope/telescope-file-browser.nvim",
+			"andrew-george/telescope-themes",
+		},
+		config = function()
+			require("features.telescope")
+		end,
+	}
+	-- {
+	-- 	"ibhagwan/fzf-lua",
+	-- 	-- optional for icon support
+	-- 	dependencies = {
+	-- 		"nvim-tree/nvim-web-devicons",
+	-- 		{ "junegunn/fzf", build = "./install --bin" },
+	-- 	},
+	-- 	config = function()
+	-- 		-- calling `setup` is optional for customization
+	-- 		require("fzf-lua").setup({ "fzf-vim" }) -- max-perf = desactiva icons
+	-- 	end,
+	-- }
 }

@@ -14,9 +14,9 @@ opt.conceallevel = 0 --json
 opt.relativenumber = true
 opt.hidden = true
 opt.expandtab = true
-opt.tabstop = 2
-opt.softtabstop = 2
-opt.shiftwidth = 2
+opt.tabstop = 4
+opt.softtabstop = 4
+opt.shiftwidth = 4
 opt.smartindent = true
 opt.errorbells = false
 opt.wrap = true
@@ -52,7 +52,7 @@ opt.cursorline = true
 opt.confirm = true
 
 opt.breakindent = true
---opt.showbreak = '↪'
+opt.showbreak = '↪'
 
 vim.opt.guifont = 'Lexsa'
 
@@ -69,5 +69,5 @@ g.python_recommended_style = 0
 --  syntax on
 --]]
 
-g.indentLine_char = '▏'       --|┊ set indentLine character
+-- g.indentLine_char = '▏'       --|┊ set indentLine character
 
