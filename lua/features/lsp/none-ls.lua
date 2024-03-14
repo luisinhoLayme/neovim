@@ -24,9 +24,10 @@
       sources = {
         formatting.stylua, -- lua formatter
         -- formatting.isort,
-        -- formatting.black,
+        formatting.black,
         -- diagnostics.pylint,
         -- diagnostics.eslint_d
+        -- diagnostics.curlylint
 
       },
     })

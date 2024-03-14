@@ -18,8 +18,11 @@ local values = {
     variant = 'hard',
   },
 
-  use_global_statusline = false,
-  use_noice = false,
+  syntax = {
+    pug = false,
+    jinja = true,
+    astro = false
+  }
 }
 
 return values

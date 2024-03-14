@@ -22,7 +22,7 @@ return {
       capabilities = capabilities,
       on_attach = lsp_attach,
       flags = lsp_flags,
-      filetypes = { "css", "eruby", "html", "javascript", "javascriptreact", "less", "sass", "scss", "pug", "typescriptreact", "vue" },
+      filetypes = { "css", "eruby", "html", "htmldjango", "javascript", "javascriptreact", "less", "sass", "scss", "pug", "typescriptreact", "vue" },
     }
   end,
   -- ["biome"] = default,

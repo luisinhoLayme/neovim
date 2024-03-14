@@ -1,4 +1,4 @@
-local values = require('config.theme')
+local values = require('config.theme-syntax')
 local g = vim.g
 local cmd = vim.cmd                   -- execute Vim commands
 -- local opt = vim.opt

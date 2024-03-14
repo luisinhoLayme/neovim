@@ -1,3 +1,5 @@
+local values = require('config.theme-syntax')
+
 return {
 	{
 		"windwp/nvim-autopairs",
@@ -99,7 +101,9 @@ return {
 	-- pick color
 	"KabbAmine/vCoolor.vim",
 	-- astro
-	"wuelnerdotexe/vim-astro",
+	{ "wuelnerdotexe/vim-astro", enabled = values.syntax.astro},
 	-- pug
-	"digitaltoad/vim-pug",
+	{ "digitaltoad/vim-pug", enabled = values.syntax.pug },
+  -- jinja2
+  { "Glench/Vim-Jinja2-Syntax", enabled = values.syntax.jinja }
 }
