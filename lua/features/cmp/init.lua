@@ -58,9 +58,10 @@ cmp.setup {
   formatting = {
     format = lspkind.cmp_format {
       with_text = true,
+      maxwidth = 50,
       menu = {
-        buffer = "[buf]",
         nvim_lsp = "[ ]",
+        buffer = "[buf]",
         nvim_lua = "[api]",
         path = "[path]",
         vsnip = "[snip]",
@@ -74,8 +75,14 @@ cmp.setup {
   sorting = {
     priority_weight = 2,
     comparators = {
+      compare.exact,
+      compare.offset,
+      compare.score,
+      compare.recently_used,
       compare.kind,
       compare.sort_text,
+      compare.length,
+      compare.order,
     },
   },
 
