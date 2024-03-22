@@ -9,7 +9,10 @@ return {
 		"hrsh7th/cmp-git",
 		-- "saadparwaiz1/cmp_luasnip",
 		"onsails/lspkind-nvim",
-		-- { "L3MON4D3/LuaSnip", version = "v1.*" },
+		-- {
+  --     "L3MON4D3/LuaSnip",
+  --     version = "v1.*",
+  --   },
 		"hrsh7th/cmp-vsnip",
 		{
 			"hrsh7th/vim-vsnip",

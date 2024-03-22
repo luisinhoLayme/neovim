@@ -1,6 +1,6 @@
 local mason = require "mason"
 local mason_lspconfig = require "mason-lspconfig"
-local langs = require "features.lsp.langs"
+local langs = require "features.lsp.servers"
 local lspconfig = require "lspconfig"
 
 mason.setup()

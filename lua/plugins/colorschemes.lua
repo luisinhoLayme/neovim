@@ -1,4 +1,4 @@
-local values = require('config.theme-syntax')
+local values = require('config.values')
 
 return {
 	{

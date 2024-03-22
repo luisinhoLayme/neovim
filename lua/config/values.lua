@@ -22,7 +22,23 @@ local values = {
     pug = false,
     jinja = true,
     astro = false
-  }
+  },
+
+  servers = {
+    emmet_language_server = true,
+    html = true,
+    cssls = true,
+    jsonls = true,
+    lua_ls = true,
+    marksman = false,
+    pyright = true,
+    tailwindcss = true,
+    tsserver = true,
+    volar = false,
+    svelte = false
+  },
+
+  lint = false
 }
 
 return values
