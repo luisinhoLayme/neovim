@@ -6,8 +6,11 @@ local values = require('config.values')
 
 -- opt.termguicolors = true      -- enable 24-bit RGB colors
  -- let g:gruvbox_material_colors_override = {'bg0': ['#181818', '234'], 'bg2': ['#202020', '235']}
+
+-- bg0 = #252623, #181818
+
 cmd [[
- let g:gruvbox_material_colors_override = {'bg0': ['#181818', '234'], 'bg2': ['#282828', '235'] }
+ let g:gruvbox_material_colors_override = {'bg0': ['#252623', '234'], 'bg2': ['#282828', '235'] }
 ]]
 
  g.gruvbox_material_background = values.theme.variant
