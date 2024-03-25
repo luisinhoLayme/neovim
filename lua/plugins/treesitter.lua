@@ -29,7 +29,6 @@ return {
 				"lua",
 				"tsx",
 				"markdown",
-        "http",
 				"markdown_inline",
 				-- "nix",
 				-- "org",
