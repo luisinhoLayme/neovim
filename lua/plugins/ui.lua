@@ -9,7 +9,17 @@ return {
 			"MunifTanjim/nui.nvim",
 		},
 		config = function()
+      local icons = require('features.ui.icons')
 			require("neo-tree").setup({
+				event_handlers = {
+					{
+						event = "file_opened",
+						handler = function(file_path)
+							--auto close
+							require("neo-tree").close_all()
+						end,
+					},
+				},
 				popup_border_style = "rounded", --rounded
 				window = {
 					position = "right",
@@ -17,6 +27,15 @@ return {
 				},
 				default_component_configs = {
 					indent = {},
+          icon = {
+            folder_closed = icons.fs.DirEmptyClosed,
+            folder_open = icons.fs.DirEmptyOpen,
+            folder_empty = "󰜌",
+            -- The next two settings are only a fallback, if you use nvim-web-devicons and configure default icons there
+            -- then these will never be used.
+            default = "*",
+            highlight = "NeoTreeFileIcon"
+          },
 				},
 			})
 		end,
@@ -88,7 +107,7 @@ return {
 		config = function()
 			require("features.telescope")
 		end,
-	}
+	},
 	-- {
 	-- 	"ibhagwan/fzf-lua",
 	-- 	-- optional for icon support

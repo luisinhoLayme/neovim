@@ -6,6 +6,8 @@ return {
     "nvim-tree/nvim-web-devicons"
 	},
 	config = function()
+    local icons = require('features.ui.icons')
+
 		local get_hex = require("cokeline.hlgroups").get_hl_attr
 		local mappings = require("cokeline.mappings")
     local palette = require("features.ui.colors")
@@ -31,7 +33,7 @@ return {
 			},
 
 			two_spaces = {
-				text = " ",
+				text = "  ",
 				truncation = { priority = 1 },
 			},
 
@@ -142,6 +144,16 @@ return {
 				bg = "", --nbg, --abg,
 				truncation = { priority = 1 },
 			},
+			left_half_sidebar = {
+				text = "", --   
+				fg = tfg,
+				bg = "", --nbg, --abg,
+			},
+			right_half_sidebar = {
+				text = "", --   
+				fg = tfg,
+				bg = "", --nbg, --abg,
+			},
 		}
 
 		require("cokeline").setup({
@@ -167,6 +179,24 @@ return {
 				end,
 			},
 
+      ---@type table | false
+      sidebar = {
+        placement = "right",
+        ---@type string | string[]
+        filetype = { "NvimTree", "neo-tree", "SidebarNvim" },
+        ---@type Component[]
+        components = {
+          components.left_half_sidebar,
+          {
+            text = "  " .. icons.custom.Tree .. " NeoTree  " .. icons.custom.Emoji .. " ",
+            fg = "#1d1b2f",
+            bg = tfg,
+            style = 'bold',
+          },
+          components.right_half_sidebar
+        },
+      },
+
 			components = {
 				components.separator,
 				components.left_half_circle,
@@ -177,7 +207,7 @@ return {
 				components.unique_prefix,
 				components.filename,
 				components.diagnostics,
-				components.two_spaces,
+				components.space,
 				components.close_or_unsaved,
 				components.right_half_circle,
 				-- components.separator,
