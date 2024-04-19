@@ -47,9 +47,9 @@ return {
 				indent = {
 					chars = { "▏" }, -- ▏ │ │, "│", "¦", "┆", "┊" }, -- more code can be found in https://unicodeplus.com/
 
-					-- style = {
-					-- 	"#3B3A3C",
-					-- },
+					style = {
+						"#3B3A3C",
+					},
 				},
 			})
 		end,

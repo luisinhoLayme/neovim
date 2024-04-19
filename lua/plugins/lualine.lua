@@ -1,9 +1,12 @@
-local icon = require('features.ui.icons')
-
 return {
 	"nvim-lualine/lualine.nvim",
 	dependencies = { "nvim-tree/nvim-web-devicons" },
 	config = function()
+    local icon = require('features.ui.icons')
+    local custom_kanagawa = require('lualine.themes.kanagawa')
+
+    custom_kanagawa.normal.c.bg = ''
+
 		local colors = {
 			fg1 = "#282828",
 			color2 = "#504945",
@@ -26,7 +29,7 @@ return {
 				-- '  '  '', '󰆣'    "☰ " "" " "  " "
 				component_separators = { left = "⁝", right = "⁝" }, -- 
 				section_separators = { left = "", right = "" },
-				theme = "auto",
+				theme = custom_kanagawa,
 			},
 			sections = {
 				-- these are to remove the defaults

@@ -22,7 +22,7 @@ return {
 				},
 				popup_border_style = "rounded", --rounded
 				window = {
-					position = "right",
+					position = "float",
 					width = 30,
 				},
 				default_component_configs = {

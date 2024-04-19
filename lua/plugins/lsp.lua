@@ -1,5 +1,3 @@
-local values = require('config.values')
-
 return {
 	"neovim/nvim-lspconfig",
   enabled = true,
@@ -27,6 +25,8 @@ return {
 	},
 	event = "VeryLazy",
 	config = function()
+    local values = require('config.values')
+
 		require("features.lsp")
     if values.linter then
       require('lint').linters_by_ft = {

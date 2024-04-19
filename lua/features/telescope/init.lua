@@ -19,12 +19,12 @@ require("telescope").setup({
 				prompt_position = "top",
       }
 		},
-		borderchars = {
-			-- prompt = { "─", " ", " ", " ", "─", "─", " ", " " },
-			prompt = { " ", " ", "─", " ", "", "", " ", " " },
-			results = { " " },
-			preview = { " " },
-		},
+		-- borderchars = {
+		-- 	-- prompt = { "─", " ", " ", " ", "─", "─", " ", " " },
+		-- 	prompt = { " ", " ", "─", " ", "", "", " ", " " },
+		-- 	results = { " " },
+		-- 	preview = { " " },
+		-- },
     file_ignore_patterns = { "node_modules", "venv" },
 	},
 })

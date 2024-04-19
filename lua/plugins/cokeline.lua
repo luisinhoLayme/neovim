@@ -146,12 +146,12 @@ return {
 			},
 			left_half_sidebar = {
 				text = "", --   
-				fg = tfg,
+				fg = sbg,
 				bg = "", --nbg, --abg,
 			},
 			right_half_sidebar = {
 				text = "", --   
-				fg = tfg,
+				fg = sbg,
 				bg = "", --nbg, --abg,
 			},
 		}
@@ -190,7 +190,7 @@ return {
           {
             text = "  " .. icons.custom.Tree .. " NeoTree  " .. icons.custom.Emoji .. " ",
             fg = "#1d1b2f",
-            bg = tfg,
+            bg = sbg,
             style = 'bold',
           },
           components.right_half_sidebar

@@ -13,11 +13,12 @@ local values = {
   -- everforest
   -- variant values: 'hard', 'medium'(default), 'soft'
 
-  -- catppuccin
+  -- kanagawa
+  -- variant values: 'wave', 'dragon'
 
   theme = {
-    name = 'gruvbox-material',
-    variant = 'hard',
+    name = 'kanagawa',
+    variant = 'dragon',
     transparent = true
   },
 

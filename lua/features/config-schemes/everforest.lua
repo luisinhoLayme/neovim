@@ -6,7 +6,7 @@ local cmd = vim.cmd                   -- execute Vim commands
 -- opt.termguicolors = true      -- enable 24-bit RGB colors
 
 cmd [[
- let g:everforest_colors_override = {'bg0': ['#1E2326', '234'], 'bg2': ['#ffffff', '235']}
+ let g:everforest_colors_override = {'bg0': ['#1E2326', '234'], 'bg2': ['#5E5E5E', '235']}
 ]]
 
 -- let g:everforest_colors_override = {'bg0': ['#202020', '234'], 'bg2': ['#282828', '235']}

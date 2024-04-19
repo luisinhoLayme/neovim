@@ -1,9 +1,9 @@
-local values = require('config.values')
+local values = require("config.values")
 
 return {
 	{
 		"catppuccin/nvim",
-		enabled = values.theme.name == 'catppuccin',
+		enabled = values.theme.name == "catppuccin",
 		name = "catppuccin",
 		lazy = false,
 		priority = 1000,
@@ -15,7 +15,7 @@ return {
 	{
 		"sainnhe/gruvbox-material",
 		lazy = false,
-		enabled = values.theme.name == 'gruvbox-material',
+		enabled = values.theme.name == "gruvbox-material",
 		priority = 1000,
 		init = function()
 			require("features.config-schemes.gruvbox-material")
@@ -27,7 +27,7 @@ return {
 	{
 		"sainnhe/everforest",
 		lazy = false,
-		enabled = values.theme.name == 'everforest',
+		enabled = values.theme.name == "everforest",
 		priority = 1000,
 		init = function()
 			require("features.config-schemes.everforest")
@@ -37,13 +37,23 @@ return {
 		end,
 	},
 	{
+		"rebelot/kanagawa.nvim",
+		lazy = false,
+		enabled = values.theme.name == "kanagawa",
+		priority = 1000,
+		config = function()
+      require('features.config-schemes.kanagawa')
+			vim.cmd.colorscheme("kanagawa")
+		end,
+	},
+	{
 		"EdenEast/nightfox.nvim",
-		enabled = values.theme.name == 'fox',
+		enabled = values.theme.name == "fox",
 		lazy = false,
 		priority = 1000,
 		config = function()
 			require("features.config-schemes.nightfox")
-      -- setup must be called before loading
+			-- setup must be called before loading
 			vim.cmd.colorscheme(values.theme.variant)
 		end,
 	},
