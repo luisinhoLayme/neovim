@@ -100,6 +100,7 @@ icons.custom = {
    Emoji    = "󰞅",
    Crates   = "",
    Tree     = "",
+   scala    = ''
 }
 
 -- stylua: ignore
@@ -142,3 +143,27 @@ icons.dap = {
 }
 
 return icons
+
+--┃│█          
+
+-- "", --  '' '' '' '' '' '' '▐'  '  '  ""
+-- '  '  '', '󰆣'    "☰ " "" " "  " "
+
+-- local default_sep_icons = {
+--   default = { left = "", right = "" },
+--   round = { left = "", right = "" },
+--   block = { left = "█", right = "█" },
+--   arrow = { left = "", right = "" },
+-- }
+--
+--  local added = (git_status.added and git_status.added ~= 0) and ("  " .. git_status.added) or ""
+--   local changed = (git_status.changed and git_status.changed ~= 0) and ("  " .. git_status.changed) or ""
+--   local removed = (git_status.removed and git_status.removed ~= 0) and ("  " .. git_status.removed) or ""
+--   local branch_name = "  " .. git_status.head
+--
+-- local spinners = { "", "󰪞", "󰪟", "󰪠", "󰪢", "󰪣", "󰪤", "󰪥" }
+--   round = { left = "", right = "" },
+--   block = { left = "█", right = "█" },
+-- local spinners = { "", "󰪞", "󰪟", "󰪠", "󰪢", "󰪣", "󰪤", "󰪥" }
+
+

@@ -19,7 +19,7 @@ local values = {
   theme = {
     name = 'kanagawa',
     variant = 'dragon',
-    transparent = false
+    transparent = true
   },
 
   lualine = {
