@@ -19,7 +19,12 @@ local values = {
   theme = {
     name = 'kanagawa',
     variant = 'dragon',
-    transparent = true
+    transparent = false
+  },
+
+  lualine = {
+    -- auto, kanagawa, gruvbox-material ...
+    theme = 'kanagawa'
   },
 
   syntax = {

@@ -11,14 +11,19 @@ local palette = {
 	-- nbgl = "#433E3B",
 
   --PERF: kanagawa
+  -- tabs
 	nbg = "#181825",
 	sbg = "#8ba4b0",
 	tfg = "#8a9aa3",
-	nbgl = "#433E3B"
+	nbgl = "#433E3B",
+  -- lualine
+  dragonPink = "#a292a3",
+  crystalBlue = "#7E9CD8",
+  dragonBlack5 = "#393836",
 }
 
 --gruvbox-material
-local colors = {
+local colors_gruv = {
   fg1    = '#282828',
   color2 = '#504945',
   fg2    = '#ddc7a1',
@@ -30,7 +35,7 @@ local colors = {
   color8 = '#d3869b',
   color9 = '#ea6962',
 }
-local colorsk = {
+local colors = {
 
     dragonBlack0 = "#0d0c0c",
     dragonBlack1 = "#12120f",

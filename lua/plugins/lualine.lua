@@ -3,9 +3,25 @@ return {
 	dependencies = { "nvim-tree/nvim-web-devicons" },
 	config = function()
     local icon = require('features.ui.icons')
-    local custom_kanagawa = require('lualine.themes.kanagawa')
+    local values = require('config.values')
+    local colors = require('features.ui.colors')
 
-    custom_kanagawa.normal.c.bg = ''
+    local kanagawa = function ()
+      local kanagawa = require('lualine.themes.kanagawa')
+
+      if values.lualine.theme == 'kanagawa' then
+        kanagawa.insert.a.bg = colors.dragonPink
+        kanagawa.normal.b.fg = colors.crystalBlue
+        if values.theme.transparent then
+          kanagawa.normal.c.bg = 'none'
+          kanagawa.normal.b.bg = 'none'
+          kanagawa.insert.b.bg = 'none'
+        else
+          kanagawa.normal.b.bg = colors.dragonBlack5
+        end
+      end
+      return kanagawa
+    end
 
 		local colors = {
 			fg1 = "#282828",
@@ -29,12 +45,19 @@ return {
 				-- '  '  '', '󰆣'    "☰ " "" " "  " "
 				component_separators = { left = "⁝", right = "⁝" }, -- 
 				section_separators = { left = "", right = "" },
-				theme = custom_kanagawa,
+				theme = values.lualine.theme == 'kanagawa' and kanagawa or values.lualine.theme,
+        -- fmt = string.upper
 			},
 			sections = {
 				-- these are to remove the defaults
 				lualine_a = {{ "mode", icon = " " }},
-				lualine_b = {},
+				lualine_b = {{
+          'filename',
+          icon = icon.fs.File,
+          -- separator = { right = '', color = "" },
+          symbols = { modified = "󰆣" },
+          color = { gui = 'bold' }
+        }},
 				lualine_c = {},
 				lualine_x = {},
 				lualine_y = {},
@@ -60,15 +83,15 @@ return {
 			table.insert(config.sections.lualine_x, component)
 		end
 
-		ins_left({
-			"filename",
-      -- "",
-      icon = icon.fs.File,
-			color = { fg = colors.yellow, gui = "bold" },
-			symbols = {
-				modified = "",
-			},
-		})
+		-- ins_left({
+		-- 	"filename",
+  --     -- "",
+  --     icon = icon.fs.File,
+		-- 	color = { fg = colors.yellow, bg = "#ffffff", gui = "bold" },
+		-- 	symbols = {
+		-- 		modified = "",
+		-- 	},
+		-- })
 
     -- ins_left { 'progress', padding = {left = 0, right = 1}, color = { fg = colors.fg, gui = 'bold' } }
 
@@ -98,8 +121,8 @@ return {
 		}
 		ins_right({
 			"diff",
-			symbols = { added = " ", modified = "󰝤 ", removed = " " },
-			-- symbols = { added = ' ', modified = '柳 ', removed = ' ' },
+			symbols = { added = " ", modified = "  ", removed = " " },
+			-- symbols = { added = ' ', modified = "󰝤 " | '柳 ', removed = ' ' },
 		})
 
 		ins_right({
