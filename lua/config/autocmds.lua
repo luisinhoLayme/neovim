@@ -23,15 +23,6 @@ vim.api.nvim_create_autocmd({ "BufWritePre" }, {
 	end,
 })
 
--- Cursor CursorHold
--- exec ([[
---   augroup lsp_document_highlight
---     autocmd! * ?*
---     autocmd CursorHold ?* silent! lua vim.lsp.buf.document_highlight()
---     autocmd CursorMoved ?* silent! lua vim.lsp.buf.clear_references()
---   augroup END
--- ]], false)
-
 -- remember files
 exec(
 	[[

@@ -44,6 +44,9 @@ return {
 		config = function()
       require('features.config-schemes.kanagawa')
 			vim.cmd.colorscheme("kanagawa")
+      vim.cmd([[
+         hi Visual guifg=none guibg=none gui=reverse
+      ]])
 		end,
 	},
 	{

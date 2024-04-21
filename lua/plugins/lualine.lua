@@ -27,7 +27,7 @@ return {
 					{
 						"filename",
 						icon = icon.fs.File,
-						-- separator = { right = '', color = "" },
+						separator = { right = not values.theme.transparent and '' or '' },
 						symbols = { modified = "" },
 						color = { gui = "bold" },
 					},
