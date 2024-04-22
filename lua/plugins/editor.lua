@@ -98,6 +98,20 @@ return {
 			},
 		},
 		config = function(_, opts)
+      -- change the highlight style
+      vim.api.nvim_set_hl(0, "IlluminatedWordText", { bg = "#4D4949" }) --link = "CursorLine" or bg = "#595555"
+      vim.api.nvim_set_hl(0, "IlluminatedWordRead", { bg = "#4D4949" })
+      vim.api.nvim_set_hl(0, "IlluminatedWordWrite", { bg = "#4D4949" })
+
+      --- auto update the highlight style on colorscheme change
+      vim.api.nvim_create_autocmd({ "ColorScheme" }, {
+        pattern = { "*" },
+        callback = function(ev)
+          vim.api.nvim_set_hl(0, "IlluminatedWordText", { bg = "#4D4949" })
+          vim.api.nvim_set_hl(0, "IlluminatedWordRead", { bg = "#4D4949" })
+          vim.api.nvim_set_hl(0, "IlluminatedWordWrite", { bg = "#4D4949" })
+        end
+      })
 			require("illuminate").configure(opts)
 
 			local function map(key, dir, buffer)
@@ -121,6 +135,7 @@ return {
 			{ "]]", desc = "Next Reference" },
 			{ "[[", desc = "Prev Reference" },
 		},
+
 	},
 	-- rainbow-delimiters
 	{

@@ -103,12 +103,10 @@
     "body": [
       "describe('$1', () => {",
       "",
-      "\ttest('should $2', () => {",
+      "\ttest('$2', () => {",
       "",
       "\t\t$0",
-      "",
-      "\t});",
-      "",
+      "\t})",
       "})"
     ],
     "description": "Log output to describe and test"
@@ -116,10 +114,9 @@
   "Print to test": {
     "prefix": "test",
     "body": [
-      "test('should $1', () => {",
+      "test('$1', () => {",
       "",
       "\t$0",
-      "",
       "})"
     ],
     "description": "Log output to test"
