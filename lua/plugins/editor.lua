@@ -109,7 +109,7 @@ return {
         callback = function(ev)
           vim.api.nvim_set_hl(0, "IlluminatedWordText", { bg = "#4D4949" })
           vim.api.nvim_set_hl(0, "IlluminatedWordRead", { bg = "#4D4949" })
-          vim.api.nvim_set_hl(0, "IlluminatedWordWrite", { bg = "#4D4949" })
+          vim.api.nvim_set_hl(0, "IlluminatedWordWrite", { bg = "#4D4949"})
         end
       })
 			require("illuminate").configure(opts)

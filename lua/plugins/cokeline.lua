@@ -156,6 +156,8 @@ return {
 			},
 		}
 
+    vim.api.nvim_set_hl(0, "TabLineFill", { bg = "" })
+
 		require("cokeline").setup({
 			show_if_buffers_are_at_least = 1,
 

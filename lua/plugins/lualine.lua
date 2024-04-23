@@ -5,11 +5,11 @@ return {
 		local icon = require("features.ui.icons")
 		local values = require("config.values")
 		local colors = require("features.ui.colors")
-    local theme_custom = require('utils.custom-theme')
+		local theme_custom = require("utils.custom-theme")
 
-    local custom_theme = require("lualine.themes." .. values.theme.name)
-    local theme = theme_custom(custom_theme)
-    local t_lualine = values.lualine.theme
+		local custom_theme = require("lualine.themes." .. values.theme.name)
+		local theme = theme_custom(custom_theme)
+		local t_lualine = values.lualine.theme
 
 		-- Config
 		local config = {
@@ -17,7 +17,7 @@ return {
 				-- Disable sections and component separators
 				component_separators = { left = "⁝", right = "⁝" }, -- 
 				section_separators = { left = "", right = "" },
-				theme = ( t_lualine == 'kanagawa' or t_lualine == 'gruvbox-material' ) and theme or t_lualine,
+				theme = (t_lualine == "kanagawa" or t_lualine == "gruvbox-material") and theme or t_lualine,
 				-- fmt = string.upper
 			},
 			sections = {
@@ -27,7 +27,7 @@ return {
 					{
 						"filename",
 						icon = icon.fs.File,
-						separator = { right = not values.theme.transparent and '' or '' },
+						separator = { right = not values.theme.transparent and "" or "" },
 						symbols = { modified = "" },
 						color = { gui = "bold" },
 					},
@@ -36,16 +36,18 @@ return {
 				lualine_x = {},
 				lualine_y = {},
 				lualine_z = {
-          { "location",
-            icon = icon.misc.Location,
-            padding = { left = 1, right = 0 }
-          },
-          {'progress',
-            icon = icon.custom.Crates,
-            separator = {left = " "},
-            padding = { left = 1, right = 1 }
-          }
-        },
+					{
+						"location",
+						icon = icon.misc.Location,
+						padding = { left = 1, right = 0 },
+					},
+					{
+						"progress",
+						icon = icon.custom.Crates,
+						separator = { left = " " },
+						padding = { left = 1, right = 1 },
+					},
+				},
 			},
 			inactive_sections = {
 				lualine_a = {},
@@ -88,7 +90,7 @@ return {
 
 		ins_right({
 			"branch",
-			icon = icon.custom.Octoface .. ' ',
+			icon = icon.custom.Octoface .. " ",
 			color = { fg = colors.purple, gui = "bold" },
 		})
 
