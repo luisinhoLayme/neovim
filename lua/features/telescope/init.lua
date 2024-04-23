@@ -32,20 +32,15 @@ require("telescope").setup({
 				prompt_position = "top",
 			},
 		},
-    borderchars = borderchars,
+    -- borderchars = borderchars,
 		file_ignore_patterns = { "node_modules", "venv" },
 	},
 })
--- -                        '─',
--- -                        '│',
--- -                        '─',
--- -                        '│',
--- -                        '┌',
--- -                        '┐',
--- -                        ' ┘',
--- -                        '└',
 require("features.telescope.mapings")
 
 require("telescope").load_extension("notify")
 require("telescope").load_extension("file_browser")
 -- require("telescope").load_extension("themes")
+
+
+

@@ -8,6 +8,7 @@ vim.api.nvim_create_autocmd("User", {
 		require("config.autocmds")
 		require("config.keymaps")
 		require("config.diagnostic")
+    require("features.config-schemes.custom-kanagawa-and-gruvbox-hl")
 	end,
 })
 

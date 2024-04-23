@@ -10,7 +10,7 @@ local values = require('config.values')
 -- bg0 = #252623, #181818
 
 cmd [[
- let g:gruvbox_material_colors_override = {'bg0': ['#252623', '234'], 'bg2': ['#252623', '235'] }
+ let g:gruvbox_material_colors_override = {'bg0': ['#181818', '234'], 'bg2': ['#252623', '235'] }
 ]]
 
 local bg = 0

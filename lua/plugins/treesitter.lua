@@ -21,6 +21,7 @@ return {
 				-- "go",
 				-- "gomod",
 				"html",
+        "python",
 				"latex",
 				"commonlisp",
 				"regex",
