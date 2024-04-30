@@ -24,10 +24,10 @@ local colors = {
 	--INFO: kanagawa
 	kanagawa = {
     -- tabs
-		nbg = "#181825",
-		sbg = "#8ba4b0",
-		tfg = "#8a9aa3",
-		nbgl = "#433E3B",
+		nbg = "#181825", -- active fg
+		sbg = "#8ba4b0", -- active bg
+		tfg = "#8a9aa3", -- inactive fg
+		nbgl = "#433E3B", -- inactive bg
 
 		-- lualine
 		bg_a = "#a292a3",
@@ -39,6 +39,6 @@ local colors = {
 
 if values.theme.name == "kanagawa" then
 	return merge({ palette, colors.kanagawa })
-elseif values.theme.name == "gruvbox-material" then
+elseif values.theme.name == "gruvbox-material" or values.theme.name == "gruvbox" then
 	return merge({ palette, colors.gruvbox_material })
 end

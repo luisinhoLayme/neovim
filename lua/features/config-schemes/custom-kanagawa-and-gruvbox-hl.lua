@@ -1,7 +1,9 @@
 local colors = require("features.ui.colors")
 local values = require("config.values")
 
-if values.theme.name == "kanagawa" or values.theme.name == "gruvbox-material" then
+if values.theme.name == "kanagawa" or
+   values.theme.name == "gruvbox-material" or
+   values.theme.name == "gruvbox" then
 	--NeoTree
 	vim.api.nvim_set_hl(0, "NeoTreeFloatTitle", { bg = colors.sbg, fg = "#181616", bold = true })
 	vim.api.nvim_set_hl(0, "WinSeparator", { fg = "#343E43" })
@@ -38,7 +40,8 @@ if values.theme.name == "kanagawa" then
 	end
 end
 
-if values.theme.name == "gruvbox-material" then
+if values.theme.name == "gruvbox-material" or
+   values.theme.name == "gruvbox" then
 	--NeoTree
 	vim.api.nvim_set_hl(0, "NeoTreeFloatBorder", { bg = "none", fg = "#504945" })
 	vim.api.nvim_set_hl(0, "NormalFloat", { bg = "" })

@@ -13,6 +13,16 @@ return {
 		end,
 	},
 	{
+		"ellisonleao/gruvbox.nvim",
+		enabled = values.theme.name == "gruvbox",
+		lazy = false,
+		priority = 1000,
+		config = function()
+			require("features.config-schemes.gruvbox")
+			vim.cmd.colorscheme("gruvbox")
+		end,
+	},
+	{
 		"sainnhe/gruvbox-material",
 		lazy = false,
 		enabled = values.theme.name == "gruvbox-material",

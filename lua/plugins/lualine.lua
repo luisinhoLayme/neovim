@@ -1,3 +1,5 @@
+local kanagawa = require "features.ui.kanagawa"
+
 return {
 	"nvim-lualine/lualine.nvim",
 	dependencies = { "nvim-tree/nvim-web-devicons" },
@@ -5,10 +7,11 @@ return {
 		local icon = require("features.ui.icons")
 		local values = require("config.values")
 		local colors = require("features.ui.colors")
-		local theme_custom = require("utils.custom-theme")
-
-		local custom_theme = require("lualine.themes." .. values.theme.name)
-		local theme = theme_custom(custom_theme)
+    local gruvbox = require "features.ui.gruvbox"
+		-- local theme_custom = require("utils.custom-theme")
+		--
+		-- local custom_theme = require("lualine.themes." .. values.lualine.theme)
+		-- local theme = theme_custom(custom_theme)
 		local t_lualine = values.lualine.theme
 
 		-- Config
@@ -17,7 +20,13 @@ return {
 				-- Disable sections and component separators
 				component_separators = { left = "⁝", right = "⁝" }, -- 
 				section_separators = { left = "", right = "" },
-				theme = (t_lualine == "kanagawa" or t_lualine == "gruvbox-material") and theme or t_lualine,
+        -- theme = gruvbox
+				theme = (
+          t_lualine == "kanagawa" and kanagawa or
+          t_lualine == "gruvbox-material" and gruvbox or
+          t_lualine == "gruvbox" and gruvbox or
+          t_lualine
+        )
 				-- fmt = string.upper
 			},
 			sections = {
@@ -27,7 +36,7 @@ return {
 					{
 						"filename",
 						icon = icon.fs.File,
-						separator = { right = not values.theme.transparent and "" or "" },
+						-- separator = { right = not values.theme.transparent and "" or "" },
 						symbols = { modified = "" },
 						color = { gui = "bold" },
 					},

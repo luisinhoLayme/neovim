@@ -1,3 +1,4 @@
+-- local gruvbox = require('features.ui.gruvbox')
 
 local values = {
   -- available themes:
@@ -24,7 +25,8 @@ local values = {
 
   lualine = {
     -- auto, kanagawa, gruvbox-material ...
-    theme = 'kanagawa'
+    theme = 'kanagawa',
+    transparent = 1 -- 1 or 0
   },
 
   syntax = {

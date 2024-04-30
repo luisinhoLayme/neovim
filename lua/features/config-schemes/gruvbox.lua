@@ -1,4 +1,4 @@
-local values = require('config.values')
+local values = require("config.values")
 
 vim.cmd([[
       autocmd InsertEnter * highlight  CursorLine guibg=#2C2830
@@ -6,13 +6,15 @@ vim.cmd([[
     ]])
 
 require("gruvbox").setup({
+	terminal_colors = true, -- add neovim terminal colors
 	undercurl = true,
 	underline = true,
-	bold = false,
+	bold = true,
 	italic = {
-		strings = false,
+		strings = true,
+		emphasis = true,
 		comments = true,
-		operators = true,
+		operators = false,
 		folds = false,
 	},
 	strikethrough = true,
@@ -21,11 +23,11 @@ require("gruvbox").setup({
 	invert_tabline = false,
 	invert_intend_guides = false,
 	inverse = true, -- invert background for search, diffs, statuslines and errors
-	contrast = "", -- can be "hard", "soft" or empty string
+	contrast = values.theme.variant, -- can be "hard", "soft" or empty string
 	palette_overrides = {
-		dark0 = "#181818",
-		dark1 = "#181818",
-		dark2 = "#282A2A", --popup
+		dark0 = "none", -- "#181818",
+		dark1 = "none", -- "#181818",
+		dark2 = "none", -- "#282A2A", --popup
 		-- dark3 = "#928474", -- num left
 
 		light0 = "#d4be98", --
@@ -42,8 +44,13 @@ require("gruvbox").setup({
 		-- gray = "#928374",
 	},
 	overrides = {
-		SignColumn = { bg = "#1b1b1b" },
+		SignColumn = { bg = "" },
 		CursorLine = { bg = "#202D2A" },
+    NeoTreeGitUntracked = { fg = "#d8a657" },
+
+		["@tag"] = { fg = "#e78a4e" },
+		["@tag.delimiter"] = { fg = "#a9b665" },
+		["@tag.attribute"] = { fg = "#a9b665" },
 	},
 	dim_inactive = true,
 	transparent_mode = values.theme.transparent, -- ...
