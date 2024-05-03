@@ -36,7 +36,7 @@ return {
 					{
 						"filename",
 						icon = icon.fs.File,
-						-- separator = { right = not values.theme.transparent and "" or "" },
+						separator = { right = not values.theme.transparent and "" or "" },
 						symbols = { modified = "" },
 						color = { gui = "bold" },
 					},

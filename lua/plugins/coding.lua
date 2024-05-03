@@ -1,4 +1,4 @@
-local values = require('config.values')
+local values = require("config.values")
 
 return {
 	{
@@ -79,31 +79,22 @@ return {
 		end,
 	},
 	-- multicursors
-	{
-		"smoka7/multicursors.nvim",
-		event = "VeryLazy",
-		dependencies = {
-			"smoka7/hydra.nvim",
-		},
-		opts = {},
-		cmd = { "MCstart", "MCvisual", "MCclear", "MCpattern", "MCvisualPattern", "MCunderCursor" },
-		keys = {
-			{
-				mode = { "v", "n" },
-				"<Leader>m",
-				"<cmd>MCstart<cr>",
-				desc = "Create a selection for selected text or word under the cursor",
-			},
-		},
-	},
+    { 'mg979/vim-visual-multi',
+      branch = 'master',
+      lazy = true,
+      keys = {
+        { '<c-n>', nil, mode = { 'n', 'v' } },
+        { '<c-d>', '<Plug>(VM-Find-Subword-Under)<cr>', mode = 'v', desc = 'Find occurrence of subword under cursor' }
+      },
+    },
 	-- tagalong chanse
 	"AndrewRadev/tagalong.vim",
 	-- pick color
 	"KabbAmine/vCoolor.vim",
 	-- astro
-	{ "wuelnerdotexe/vim-astro", enabled = values.syntax.astro},
+	{ "wuelnerdotexe/vim-astro", enabled = values.syntax.astro },
 	-- pug
 	{ "digitaltoad/vim-pug", enabled = values.syntax.pug },
-  -- jinja2
-  { "Glench/Vim-Jinja2-Syntax", enabled = values.syntax.jinja }
+	-- jinja2
+	{ "Glench/Vim-Jinja2-Syntax", enabled = values.syntax.jinja },
 }

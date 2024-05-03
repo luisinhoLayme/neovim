@@ -72,3 +72,7 @@ g.python_recommended_style = 0
 -- g.indentLine_char = '▏'       --|┊ set indentLine character
 
 g.loaded_perl_provider = 0
+
+
+-- vim.g.html_indent_script1 = "inc"
+-- vim.g.html_indent_style1 = "inc"
