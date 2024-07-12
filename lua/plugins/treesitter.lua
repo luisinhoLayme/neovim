@@ -23,6 +23,7 @@ return {
 				"html",
         "python",
 				"latex",
+        "prisma",
 				"commonlisp",
 				"regex",
 				"javascript",

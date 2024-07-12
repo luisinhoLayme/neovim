@@ -63,6 +63,10 @@ servers.jsonls = {
 	autoload = has_enabled.jsonls,
 	config = default,
 }
+servers.prismals = {
+	autoload = has_enabled.prismals,
+	config = default,
+}
 servers.lua_ls = {
 	autoload = has_enabled.lua_ls,
 	config = {

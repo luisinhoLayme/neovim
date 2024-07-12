@@ -40,6 +40,7 @@ local values = {
     html = true,
     cssls = true,
     jsonls = true,
+    prismals = true,
     lua_ls = true,
     marksman = false,
     pyright = false,
