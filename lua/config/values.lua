@@ -18,15 +18,15 @@ local values = {
   -- variant values: 'wave', 'dragon'
 
   theme = {
-    name = 'kanagawa',
-    variant = 'dragon',
-    transparent = true
+    name = 'gruvbox-material',
+    variant = 'hard',
+    transparent = false
   },
 
   lualine = {
     -- auto, kanagawa, gruvbox-material ...
-    theme = 'kanagawa',
-    transparent = 1 -- 1 or 0
+    theme = 'gruvbox-material',
+    transparent = 0 -- 1 or 0
   },
 
   syntax = {
@@ -47,7 +47,7 @@ local values = {
     pylsp = true,
     tailwindcss = true,
     tsserver = true,
-    volar = false,
+    volar = true,
     svelte = false
   },
 

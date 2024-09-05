@@ -99,6 +99,26 @@ servers.marksman = {
 	autoload = has_enabled.marksman,
 	config = default,
 }
+servers.volar = {
+	autoload = has_enabled.volar,
+	config = {
+		capabilities = capabilities,
+		on_attach = lsp_attach,
+		flags = lsp_flags,
+		filetypes = { "vue", "javascript", "typescript", "javascriptreact", "typescriptreact" },
+		init_options = {
+			vue = {
+				hybridMode = false,
+			},
+			typescript = {
+				-- Global install of typescript
+				--tsdk = '~/.nvm/versions/node/v20.11.1/lib/node_modules/typescript',
+				-- Current project version and what I will likely use
+				tsdk = vim.fn.getcwd() .. "node_modules/typescript/lib",
+			},
+		},
+	},
+}
 servers.pyright = {
 	autoload = has_enabled.pyright,
 	config = {
@@ -121,7 +141,7 @@ servers.tailwindcss = {
 		capabilities = capabilities,
 		on_attach = lsp_attach,
 		flags = lsp_flags,
-		filetypes = { "blade", "html", "javascriptreact", "typescriptreact", "svelte" },
+		filetypes = { "blade", "html", "javascriptreact", "jade", "volar", "typescriptreact", "svelte", "pug" },
 	},
 }
 servers.tsserver = {
