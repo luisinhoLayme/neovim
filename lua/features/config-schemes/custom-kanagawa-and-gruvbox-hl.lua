@@ -3,7 +3,8 @@ local values = require("config.values")
 
 if values.theme.name == "kanagawa" or
    values.theme.name == "gruvbox-material" or
-   values.theme.name == "gruvbox" then
+   values.theme.name == "gruvbox" or
+   values.theme.name == "everforest" then
 	--NeoTree
 	vim.api.nvim_set_hl(0, "NeoTreeFloatTitle", { bg = colors.sbg, fg = "#181616", bold = true })
 	vim.api.nvim_set_hl(0, "WinSeparator", { fg = "#343E43" })
@@ -13,7 +14,7 @@ if values.theme.name == "kanagawa" or
 	vim.api.nvim_set_hl(0, "DiagnosticUnderlineWarn", { bg = "#39382B" })
 end
 
-if values.theme.name == "kanagawa" then
+if values.theme.name == "kanagawa" or values.theme.name == "everforest" then
 	-- NeoTree
 	vim.api.nvim_set_hl(0, "NeoTreeGitModified", { fg = "#a292a3" })
 	vim.api.nvim_set_hl(0, "NeoTreeGitUntracked", { fg = "#c4b28a" })

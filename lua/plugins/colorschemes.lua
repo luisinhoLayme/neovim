@@ -40,12 +40,26 @@ return {
 		enabled = values.theme.name == "everforest",
 		priority = 1000,
 		init = function()
-			require("features.config-schemes.everforest")
+			require("features.config-schemes.everforest-shine")
 		end,
 		config = function()
 			vim.cmd.colorscheme("everforest")
 		end,
 	},
+  {
+    "neanias/everforest-nvim",
+    version = false,
+    lazy = false,
+		enabled = values.theme.name == "everforest-nvim",
+    priority = 1000, -- make sure to load this before all the other start plugins
+    -- Optional; default configuration will be used if setup isn't called.
+    init = function ()
+      require("features.config-schemes.everforest-nvim")
+    end,
+    config = function()
+      vim.cmd.colorscheme("everforest")
+    end,
+  },
 	{
 		"rebelot/kanagawa.nvim",
 		lazy = false,

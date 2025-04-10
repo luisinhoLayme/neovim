@@ -41,4 +41,6 @@ if values.theme.name == "kanagawa" then
 	return merge({ palette, colors.kanagawa })
 elseif values.theme.name == "gruvbox-material" or values.theme.name == "gruvbox" then
 	return merge({ palette, colors.gruvbox_material })
+elseif values.theme.name == "everforest" then
+	return merge({ palette, colors.kanagawa })
 end

@@ -141,7 +141,7 @@ servers.tailwindcss = {
 		capabilities = capabilities,
 		on_attach = lsp_attach,
 		flags = lsp_flags,
-		filetypes = { "blade", "html", "javascriptreact", "jade", "volar", "typescriptreact", "svelte", "pug" },
+		filetypes = { "blade", "html", "javascriptreact", "jade", "volar", "typescriptreact", "svelte", "pug", "vue" },
 	},
 }
 servers.tsserver = {

@@ -14,18 +14,21 @@ local values = {
   -- everforest
   -- variant values: 'hard', 'medium'(default), 'soft'
 
+  -- everforest-nvim
+  -- variant values: 'hard', 'medium'(default), 'soft'
+
   -- kanagawa
   -- variant values: 'wave', 'dragon'
 
   theme = {
-    name = 'gruvbox-material',
+    name = 'everforest',
     variant = 'hard',
     transparent = false
   },
 
   lualine = {
     -- auto, kanagawa, gruvbox-material ...
-    theme = 'gruvbox-material',
+    theme = 'kanagawa',
     transparent = 0 -- 1 or 0
   },
 
