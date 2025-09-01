@@ -22,7 +22,7 @@
   "vue component": {
     "prefix": "vue",
     "body": [
-      "<script setup>",
+      "<script setup lang='ts'>",
       "defineProps({$1})",
       "</script>",
       "",

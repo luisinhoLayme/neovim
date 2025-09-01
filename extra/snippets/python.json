@@ -37,5 +37,14 @@
       "from ${1:hash} import ${0:hash}"
 		],
 		"description": "Log output to print"
+	},
+	"Print system clear": {
+		"prefix": "sys",
+		"body": [
+      "import os",
+      "os.system('clear')",
+      "$0"
+		],
+		"description": "Log output to import os"
 	}
 }

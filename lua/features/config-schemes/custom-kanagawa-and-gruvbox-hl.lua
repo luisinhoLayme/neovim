@@ -31,6 +31,11 @@ if values.theme.name == "kanagawa" or values.theme.name == "everforest" then
 	vim.api.nvim_set_hl(0, "DiagnosticSignError", { bg = "", fg = "#c4746e" })
 	-- vim.api.nvim_set_hl(0, "DiagnosticHint", { bg = "#2B3934", fg = "#68AD99" })
 
+	--Telescope
+	vim.api.nvim_set_hl(0, "TelescopeTitle", { bg = "#d3869b", fg = "#282727", bold = true })
+	vim.api.nvim_set_hl(0, "TelescopeResultsTitle", { bg = "#7daea3", fg = "#282727", bold = true })
+	vim.api.nvim_set_hl(0, "TelescopePreviewTitle", { bg = "#a9b665", fg = "#282727", bold = true })
+
   --lualine
 	if values.theme.transparent then
 		vim.api.nvim_set_hl(0, "lualine_c_diagnostics_error_normal", { fg = "#c4746e", bg = "none" })

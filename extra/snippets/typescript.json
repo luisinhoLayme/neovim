@@ -333,5 +333,28 @@
 			"export const { ${2:incrementByAmount} } = ${1:counter}Slice.actions"
 		],
 		"description": "Log output luis"
-	}
+	},
+  "Print a Pinia Store": {
+    "prefix": "pinia-store",
+    "body": [
+      "import { defineStore } from 'pinia'",
+      "import { computed, ref } from 'vue'",
+      "",
+      "export const use${1:Counter}Store = defineStore('${0:counter}', () => {",
+      "",
+      "\tconst count = ref<number>(0)",
+      "",
+      "\treturn {",
+      "\t\t//state properties",
+      "\t\tcount,",
+      "",
+      "\t\t//getters",
+      "\t\tsquareCount: computed(() => count.value * count.value),",
+      "",
+      "\t\t//actions",
+      "\t}",
+      "})"
+    ],
+    "description": "Create a store setup pinia"
+  }
 }

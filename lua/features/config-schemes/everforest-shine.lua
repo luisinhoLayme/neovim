@@ -6,9 +6,10 @@ local cmd = vim.cmd                   -- execute Vim commands
 -- opt.termguicolors = true      -- enable 24-bit RGB colors
 
 cmd [[
- let g:everforest_colors_override = {'bg0': ['#1E2326', '234'], 'bg2': ['#5E5E5E', '235']}
+  let g:everforest_colors_override = {'bg0': ['#202020', '234'], 'bg2': ['#282828', '235']}
 ]]
 
+ -- let g:everforest_colors_override = {'bg0': ['#1E2326', '234'], 'bg2': ['#5E5E5E', '235']}
 -- let g:everforest_colors_override = {'bg0': ['#202020', '234'], 'bg2': ['#282828', '235']}
 
 local bg = 0
@@ -35,8 +36,4 @@ g.everforest_diagnostic_virtual_text = 'colored' --d:'grey'`, `'colored'`, `'hig
 g.everforest_current_word = 'grey background' --" `'grey background'`, `'bold'`, `'underline'`, `'italic' = default =  `'grey background'` when not in transparent mode, `'bold'`
 g.everforest_lightline_disable_bold = 1 -- d:`0`, `1`
 
-
-
-
-
-vim.cmd("colorscheme everforest")
+-- vim.cmd("colorscheme everforest")
