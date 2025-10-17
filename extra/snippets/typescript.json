@@ -88,7 +88,11 @@
   "Print to com": {
     "prefix": "scf",
     "body": [
-      "export const ${1:$TM_FILENAME_BASE} = ($2) => {",
+      "import {type FC} from 'react'",
+      "",
+      "interface Props {}",
+      "",
+      "export const ${1:$TM_FILENAME_BASE}: FC<Props> = ($2) => {",
       "\treturn (",
       "\t\t<>",
       "\t\t\t<div>${1}$0</div>",

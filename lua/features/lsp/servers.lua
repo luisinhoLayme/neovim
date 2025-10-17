@@ -35,6 +35,7 @@ servers.emmet_language_server = {
 			"pug",
 			"typescriptreact",
 			"vue",
+      "angular"
 		},
 	},
 }
@@ -118,6 +119,17 @@ servers.volar = {
 			},
 		},
 	},
+}
+-- local project_library_path = "/path/to/project/lib"
+servers.angularls = {
+	autoload = has_enabled.angularls,
+  config = {
+    capabilities = capabilities,
+    -- cmd = {"ngserver", "--stdio", "--tsProbeLocations", project_library_path , "--ngProbeLocations", project_library_path},
+    on_attach = lsp_attach,
+		-- filetypes = { "typescript", "ts", "html" },
+		flags = lsp_flags
+  }
 }
 servers.pyright = {
 	autoload = has_enabled.pyright,

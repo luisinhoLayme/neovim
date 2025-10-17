@@ -51,6 +51,7 @@ local values = {
     tailwindcss = true,
     tsserver = true,
     volar = true,
+    angularls = true,
     svelte = false
   },
 
