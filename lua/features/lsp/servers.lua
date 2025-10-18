@@ -120,7 +120,7 @@ servers.volar = {
 		},
 	},
 }
--- local project_library_path = "/path/to/project/lib"
+-- local project_library_path = vim.fn.getcwd() .. "node_modules/typescript/lib" --"/path/to/project/lib"
 servers.angularls = {
 	autoload = has_enabled.angularls,
   config = {
@@ -128,6 +128,7 @@ servers.angularls = {
     -- cmd = {"ngserver", "--stdio", "--tsProbeLocations", project_library_path , "--ngProbeLocations", project_library_path},
     on_attach = lsp_attach,
 		-- filetypes = { "typescript", "ts", "html" },
+    filetypes = { "typescript", "html", "typescriptreact", "typescript.tsx", "htmlangular", "angular.html", "jinja.html" },
 		flags = lsp_flags
   }
 }
