@@ -100,26 +100,100 @@ servers.marksman = {
 	autoload = has_enabled.marksman,
 	config = default,
 }
-servers.volar = {
-	autoload = has_enabled.volar,
-	config = {
-		capabilities = capabilities,
-		on_attach = lsp_attach,
-		flags = lsp_flags,
-		filetypes = { "vue", "javascript", "typescript", "javascriptreact", "typescriptreact" },
-		init_options = {
-			vue = {
-				hybridMode = false,
-			},
-			typescript = {
-				-- Global install of typescript
-				--tsdk = '~/.nvm/versions/node/v20.11.1/lib/node_modules/typescript',
-				-- Current project version and what I will likely use
-				tsdk = vim.fn.getcwd() .. "node_modules/typescript/lib",
-			},
-		},
-	},
+
+
+-- servers.vue_ls = {
+-- 	autoload = has_enabled.vue_ls,
+-- 	config = {
+-- 		capabilities = capabilities,
+-- 		on_attach = lsp_attach,
+-- 		flags = lsp_flags,
+-- 		filetypes = { "vue", "javascript", "typescript", "javascriptreact", "typescriptreact" },
+-- 		-- root_markers = { "package.json", "tsconfig.json", "jsconfig.json" },
+-- 		settings = {
+-- 			vue = {
+-- 				-- Generalmente se usa el modo Hybrid (por defecto) o false, si usas ts_ls
+-- 				hybridMode = false, -- Asegura que ts_ls tome el control del TS
+-- 			}
+-- 		}
+-- 	},
+-- }
+local vue_plugin = {
+  name = '@vue/typescript-plugin',
+  -- location = vue_language_server_path,
+	location = vim.fn.stdpath("data") .. "/mason/packages/vue-language-server/node_modules/@vue/language-server",
+  languages = { 'vue' },
+  configNamespace = 'typescript',
 }
+
+
+-- servers.tsserver = {
+-- 	autoload = has_enabled.tsserver,
+-- 	config = {
+-- 		capabilities = capabilities,
+-- 		flags = lsp_flags,
+-- 		filetypes = {
+-- 			"typescript",
+-- 			"typescriptreact",
+-- 			"typescript.tsx",
+-- 			"javascript",
+-- 			"javascriptreact",
+-- 			"javascript.jsx",
+-- 			"vue",
+-- 		},
+-- 		init_options = {
+-- 			plugins = {
+-- 				vue_plugin,
+-- 			},
+-- 		},
+-- 		-- root_markers = { "package.json", "tsconfig.json", "jsconfig.json" },
+-- 		settings = {
+--
+-- 			javascript = {
+-- 				inlayHints = {
+-- 					includeInlayEnumMemberValueHints = true,
+-- 					includeInlayFunctionLikeReturnTypeHints = true,
+-- 					includeInlayFunctionParameterTypeHints = true,
+-- 					includeInlayParameterNameHints = "all", -- 'none' | 'literals' | 'all';
+-- 					includeInlayParameterNameHintsWhenArgumentMatchesName = true,
+-- 					includeInlayPropertyDeclarationTypeHints = true,
+-- 					includeInlayVariableTypeHints = false,
+-- 				},
+-- 			},
+--
+-- 			typescript = {
+-- 				inlayHints = {
+-- 					includeInlayEnumMemberValueHints = true,
+-- 					includeInlayFunctionLikeReturnTypeHints = true,
+-- 					includeInlayFunctionParameterTypeHints = true,
+-- 					includeInlayParameterNameHints = "all", -- 'none' | 'literals' | 'all';
+-- 					includeInlayParameterNameHintsWhenArgumentMatchesName = true,
+-- 					includeInlayPropertyDeclarationTypeHints = true,
+-- 					includeInlayVariableTypeHints = false,
+-- 				},
+-- 			},
+-- 		},
+-- 	},
+-- }
+
+-- servers.vtsls = {
+-- 	autoload = has_enabled.vtsls,
+-- 	config = {
+-- 		capabilities = capabilities,
+-- 		on_attach = lsp_attach,
+-- 		flags = lsp_flags,
+-- 		settings = {
+-- 			vtsls = {
+-- 				tsserver = {
+-- 					globalPlugins = {
+-- 						vue_plugin,
+-- 					},
+-- 				},
+-- 			},
+-- 		},
+-- 		filetypes = { 'typescript', 'javascript', 'javascriptreact', 'typescriptreact', 'vue' },
+-- 	}
+-- }
 -- local project_library_path = vim.fn.getcwd() .. "node_modules/typescript/lib" --"/path/to/project/lib"
 servers.angularls = {
 	autoload = has_enabled.angularls,
@@ -157,6 +231,29 @@ servers.tailwindcss = {
 		filetypes = { "blade", "html", "javascriptreact", "jade", "volar", "typescriptreact", "svelte", "pug", "vue" },
 	},
 }
+
+local project_bin = '/home/boy_4/.local/share/pnpm/global/5/node_modules/@vue/language-server/node_modules/.bin/vue-language-server'
+local ts_bin = '/home/boy_4/.local/share/pnpm/global/5/node_modules/typescript/lib/'
+
+servers.volar = {
+	autoload = has_enabled.volar,
+	config = {
+    -- cmd = { project_bin, "--stdio" },
+		capabilities = capabilities,
+		on_attach = lsp_attach,
+		flags = lsp_flags,
+		filetypes = { "vue", "javascript", "typescript", "javascriptreact", "typescriptreact" },
+		init_options = {
+			vue = {
+				hybridMode = false,
+			},
+			-- typescript = {
+			-- 	-- tsdk = vim.fn.getcwd() .. "/node_modules/typescript/lib",
+   --      tsdk = ts_bin
+			-- },
+		},
+	},
+}
 servers.tsserver = {
 	autoload = has_enabled.tsserver,
 	config = {
@@ -186,6 +283,7 @@ servers.tsserver = {
 					includeInlayEnumMemberValueHints = true,
 				},
 			},
+
 		},
 	},
 }

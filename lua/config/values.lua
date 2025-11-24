@@ -49,8 +49,11 @@ local values = {
     pyright = false,
     pylsp = true,
     tailwindcss = true,
-    tsserver = true,
+    tsserver = false,
+    ts_ls = false,
     volar = true,
+    vue_ls = false,
+    vtsls = false,
     angularls = true,
     svelte = false
   },

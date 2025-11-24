@@ -15,16 +15,16 @@ return {
   },
 	config = function()
     -- Ejemplo para configurar el filetype (puedes agregarlo a tu configuración de Treesitter o a un plugin de Angular)
-    vim.api.nvim_create_autocmd({ "BufReadPost", "BufNewFile" }, {
-        pattern = { "*.html", "*.html" },
-        callback = function()
-            -- 1. Asignar un filetype específico
-            vim.bo.filetype = "angular.html"
-            -- 2. Asegurar que Treesitter use el parser 'angular' para este buffer
-            -- Esto a veces es necesario en configuraciones manuales si el paso 1 no es suficiente
-            require('nvim-treesitter').start(nil, "angular")
-        end,
-    })
+    -- vim.api.nvim_create_autocmd({ "BufReadPost", "BufNewFile" }, {
+    --     pattern = { "*.html" },
+    --     callback = function()
+    --         -- 1. Asignar un filetype específico
+    --         vim.bo.filetype = "angular.html"
+    --         -- 2. Asegurar que Treesitter use el parser 'angular' para este buffer
+    --         -- Esto a veces es necesario en configuraciones manuales si el paso 1 no es suficiente
+    --         require('nvim-treesitter').start(nil, "angular")
+    --     end,
+    -- })
 		require("nvim-treesitter.configs").setup({
 			ensure_installed = {
 				"bash",
@@ -33,7 +33,7 @@ return {
 				-- "gomod",
 				"html",
         "python",
-				"latex",
+				-- "latex",
         "prisma",
 				"commonlisp",
 				"regex",
@@ -67,11 +67,11 @@ return {
 				enable = true,
 				-- filetypes = { "html" , "xml" },
 			},
-      additional_languages = function(filetype)
-          if filetype == 'angular.html' then
-              return { 'angular' } -- Usa el parser de 'angular'
-          end
-      end,
+      -- additional_languages = function(filetype)
+      --     if filetype == 'angular.html' then
+      --         return { 'angular' } -- Usa el parser de 'angular'
+      --     end
+      -- end,
     })
 	end,
 }
