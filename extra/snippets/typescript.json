@@ -377,8 +377,7 @@
     "prefix": "reactProvider",
     "body": [
       "import { type FC, type ReactNode, useReducer } from 'react'",
-      "import { ${1:name}Context } from './${1:name}Context'",
-      "import { ${1/(.*)/${1:/downcase}/}Reducer } from './${1/(.*)/${1:/downcase}/}Reducer'",
+      "import { ${1:name}Context, ${1/(.*)/${1:/downcase}/}Reducer } from './'",
       "",
       "interface Props {",
       "\tchildren: ReactNode",
@@ -408,7 +407,7 @@
   "Print a reducer": {
     "prefix": "reactContextReducer",
     "body": [
-      "import { ${1:name}State } from './${1:name}Provider'",
+      "import { ${1:name}State } from './'",
       "",
       "type ${1:name}ActionType =",
       "| { type: '[${1:name}] - ${2:ActionName}' }",
@@ -425,6 +424,15 @@
       "\t\t\treturn state",
       "\t}",
       "}"
+    ]
+  },
+  "Print a barrel context": {
+    "prefix": "reactContextBarrel",
+    "body": [
+      "",
+      "export * from './${1:name}Context'",
+      "export * from './${1:name}Provider'",
+      "export * from './${1/(.*)/${1:/downcase}/}Reducer'"
     ]
   }
 }
